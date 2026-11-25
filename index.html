@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d26" />
+  <meta name="description" content="MOO-TANT INVASION - Pilot a UFO and abduct cows in this 3D arcade game!" />
+
+  <!-- iOS PWA Fullscreen & Home Screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Moo-tant" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+
+  <!-- Android / Standard PWA -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+
+  <title>MOO-TANT INVASION</title>
+</head>
+<body>
+  <div id="game-root">
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Lightweight Loading Screen -->
+    <div id="loading-screen" class="overlay active">
+      <div class="loading-box">
+        <div class="ufo-loader-icon">🛸</div>
+        <h1 class="neon-title">MOO-TANT<br /><span>INVASION</span></h1>
+        <p class="loading-sub">CALIBRATING TRACTOR BEAM...</p>
+        <div class="progress-track">
+          <div id="loading-bar" class="progress-fill"></div>
+        </div>
+        <div id="loading-pct" class="loading-pct">0%</div>
+      </div>
+    </div>
+
+    <!-- Portrait Orientation Warning Overlay -->
+    <div id="rotate-overlay" class="overlay hidden">
+      <div class="rotate-card">
+        <div class="phone-rotate-icon">📱</div>
+        <h2>ROTATE YOUR DEVICE</h2>
+        <p>MOO-TANT INVASION plays best in landscape mode!</p>
+      </div>
+    </div>
+
+    <!-- HUD Layer -->
+    <div id="hud" class="hud hidden"></div>
+
+    <!-- Touch Controls Layer -->
+    <div id="touch-controls" class="touch-controls hidden">
+      <div id="joystick-zone" class="joystick-zone">
+        <div id="joystick-base" class="joystick-base">
+          <div id="joystick-knob" class="joystick-knob"></div>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button id="btn-bomb" class="action-btn bomb-btn" type="button" aria-label="Stun Bomb">
+          <span class="btn-icon">⚡</span>
+          <span class="btn-label">BOMB</span>
+          <span id="bomb-cd-ring" class="cd-overlay"></span>
+        </button>
+        <button id="btn-beam" class="action-btn beam-btn" type="button" aria-label="Tractor Beam">
+          <span class="btn-icon">👽</span>
+          <span class="btn-label">BEAM</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating Score Popups -->
+    <div id="popups-layer" class="popups-layer"></div>
+
+    <!-- Screen Flash Overlay -->
+    <div id="damage-flash" class="damage-flash"></div>
+
+    <!-- Menus / Shop Layer -->
+    <div id="menus-layer" class="menus-layer"></div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

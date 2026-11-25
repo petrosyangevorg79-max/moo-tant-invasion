@@ -1,0 +1,21 @@
+{
+  "name": "moo-tant-invasion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MOO-TANT INVASION - 3D UFO Cow Abduction Arcade Game",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node@^4.35.0"
+  }
+}
